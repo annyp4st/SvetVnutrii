@@ -262,6 +262,21 @@
             text-align: center;
             box-shadow: 0 6px 12px rgba(0,0,0,0.05);
         }
+        /* Стили для ссылок-карточек */
+        a.local-item {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        a.local-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -8px rgba(0,0,0,0.2);
+            background: #f9f9f9;
+        }
         .local-item i {
             font-size: 2.5rem;
             color: #4a6a5e;
@@ -652,16 +667,24 @@
 
         function renderFinish() {
             const msg = finishMessages[currentBranch];
-            // Добавим блок про локальные активности (для обеих веток)
+            // Добавим блок про локальные активности (для обеих веток) с кликабельными ссылками
             const localHtml = `
                 <div class="local-block">
                     <h3><i class="fas fa-map-pin"></i> В нашей школе</h3>
                     <p>Вот что мы делаем вместе:</p>
                     <div class="local-items">
-                        <div class="local-item"><i class="fas fa-box-open"></i> Сбор посылок бойцам</div>
-                        <div class="local-item"><i class="fas fa-paw"></i> Помощь зооприютам</div>
-                        <div class="local-item"><i class="fas fa-monument"></i> Шефство над мемориалом</div>
-                        <div class="local-item"><i class="fas fa-calendar-alt"></i> Интересные и полезные мероприятия</div>
+                        <a class="local-item" href="https://vk.ru/wall-176658429_5214" target="_blank" rel="noopener">
+                            <i class="fas fa-calendar-alt"></i> Интересные и полезные мероприятия
+                        </a>
+                        <a class="local-item" href="https://vk.ru/wall-176658429_5269" target="_blank" rel="noopener">
+                            <i class="fas fa-box-open"></i> Сбор посылок бойцам
+                        </a>
+                        <a class="local-item" href="https://vk.ru/wall-176658429_5231" target="_blank" rel="noopener">
+                            <i class="fas fa-paw"></i> Помощь зооприютам
+                        </a>
+                        <a class="local-item" href="https://vk.ru/wall-176658429_4955" target="_blank" rel="noopener">
+                            <i class="fas fa-monument"></i> Шефство над мемориалом
+                        </a>
                     </div>
                     <p style="margin-top:16px;">Присоединяйся к школьному волонтёрскому отряду! Мы ждём тебя!</p>
                 </div>
